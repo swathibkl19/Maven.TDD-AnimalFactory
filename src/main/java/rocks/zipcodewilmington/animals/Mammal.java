@@ -33,7 +33,7 @@ public abstract class Mammal implements Animal {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate (Date birthDate) {
         this.birthDate = birthDate;
     }
 

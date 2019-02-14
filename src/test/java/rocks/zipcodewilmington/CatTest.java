@@ -3,6 +3,11 @@ package rocks.zipcodewilmington;
 import org.junit.Assert;
 import org.junit.Test;
 import rocks.zipcodewilmington.animals.Cat;
+import static org.hamcrest.CoreMatchers.instanceOf;
+
+
+import java.util.ArrayList;
+
 
 import java.util.Date;
 
@@ -38,6 +43,107 @@ public class CatTest {
         Assert.assertEquals(givenName, retrievedName);
         Assert.assertEquals(givenBirthDate, retrievedBirthDate);
         Assert.assertEquals(givenId, retrievedId);
+    }
+
+//    @Test
+//    public void setName(String name){
+////        Cat.name();
+//        //Make a cat
+//        //Set the cats name
+//        //Check the cats name is the given name
+//    }
+
+
+    @Test
+    public void setNameTest(){
+
+        String givenName = "Zula";
+
+
+        // When (a cat is constructed)
+        Cat cat = new Cat(null, null, null);
+        cat.setName(givenName);
+        Assert.assertEquals(givenName,cat.getName());
+
+
+    }
+
+    @Test
+    public void speakTest(){
+
+        String givenName = "Zula";
+        Date givenBirthDate = new Date();
+        Integer givenId = 0;
+
+        // When (a cat is constructed)
+        Cat cat = new Cat(null, givenBirthDate, givenId);
+        Assert.assertEquals("meow!",cat.speak());
+
+
+    }
+   @Test
+    public void birthDateTest(){
+
+        //Creating the cat DB
+        Date givenBirthDate = new Date();
+
+        //Creating the NEW CAT
+        Cat cat = new Cat(null,null,null);
+
+        //Assigning the above BD
+        cat.setBirthDate(givenBirthDate);
+
+        Assert.assertEquals(givenBirthDate , cat.getBirthDate());
+
+    }
+
+    @Test
+    public void testFoodTest(){
+        //Creating the Food
+     Food f = new Food();
+
+     Cat cat  = new Cat(null,null,null);
+
+     cat.eat(f);
+     cat.eat(f);
+
+     Assert.assertEquals("2",cat.getNumberOfMealsEaten().toString());
+
+    }
+
+    @Test
+    public void getIdTest(){
+
+        Integer givenId = 0;
+
+        // When (a cat is constructed)
+        Cat cat = new Cat(null, null, givenId);
+        Assert.assertEquals("0",cat.getId().toString());
+
+
+    }
+
+
+    @Test
+    public void instanceOfTest(){
+
+        Integer givenId = 0;
+
+        // When (a cat is constructed)
+        Cat cat = new Cat(null, null, givenId);
+
+    Assert.assertThat(cat ,instanceOf(rocks.zipcodewilmington.animals.Mammal.class));
+    }
+
+    @Test
+    public void animalinstanceOfTest(){
+
+        Integer givenId = 0;
+
+        // When (a cat is constructed)
+        Cat cat = new Cat(null, null, givenId);
+
+        Assert.assertThat(cat ,instanceOf(rocks.zipcodewilmington.animals.Animal.class));
     }
 
 }
