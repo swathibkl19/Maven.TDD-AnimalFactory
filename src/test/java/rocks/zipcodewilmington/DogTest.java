@@ -94,7 +94,7 @@ public class DogTest {
 
         Integer givenId = 0;
 
-        // When (a cat is constructed)
+        // When (a dog is constructed)
         Dog dog = new Dog(null, null, givenId);
         Assert.assertEquals("0",dog.getId().toString());
 
@@ -104,12 +104,12 @@ public class DogTest {
 
     @Test
     public void instanceOfTest(){
-
+     //given
         Integer givenId = 0;
 
-        // When (a cat is constructed)
+        // When (a dog is constructed)
         Dog dog = new Dog(null, null, givenId);
-
+     //then
         Assert.assertThat(dog ,instanceOf(rocks.zipcodewilmington.animals.Mammal.class));
     }
 
@@ -118,7 +118,7 @@ public class DogTest {
 
         Integer givenId = 0;
 
-        // When (a cat is constructed)
+        // When (a dog is constructed)
         Dog dog = new Dog(null, null, givenId);
 
         Assert.assertThat(dog ,instanceOf(rocks.zipcodewilmington.animals.Animal.class));
